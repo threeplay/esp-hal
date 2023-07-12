@@ -49,7 +49,7 @@ fn main() -> ! {
 
     let alarm0 = syst.alarm0.into_periodic();
     alarm0.set_period(1u32.Hz());
-    alarm0.interrupt_enable(true);
+    // alarm0.interrupt_enable(true);
 
     let alarm1 = syst.alarm1;
     alarm1.set_target(SystemTimer::now() + (SystemTimer::TICKS_PER_SECOND * 2));
@@ -57,7 +57,7 @@ fn main() -> ! {
 
     let alarm2 = syst.alarm2;
     alarm2.set_target(SystemTimer::now() + (SystemTimer::TICKS_PER_SECOND * 3));
-    alarm2.interrupt_enable(true);
+    // alarm2.interrupt_enable(true);
 
     critical_section::with(|cs| {
         ALARM0.borrow_ref_mut(cs).replace(alarm0);
@@ -65,21 +65,21 @@ fn main() -> ! {
         ALARM2.borrow_ref_mut(cs).replace(alarm2);
     });
 
-    interrupt::enable(
-        peripherals::Interrupt::SYSTIMER_TARGET0,
-        Priority::Priority1,
-    )
-    .unwrap();
+    // interrupt::enable(
+    //     peripherals::Interrupt::SYSTIMER_TARGET0,
+    //     Priority::Priority1,
+    // )
+    // .unwrap();
     interrupt::enable(
         peripherals::Interrupt::SYSTIMER_TARGET1,
         Priority::Priority2,
     )
     .unwrap();
-    interrupt::enable(
-        peripherals::Interrupt::SYSTIMER_TARGET2,
-        Priority::Priority3,
-    )
-    .unwrap();
+    // interrupt::enable(
+    //     peripherals::Interrupt::SYSTIMER_TARGET2,
+    //     Priority::Priority3,
+    // )
+    // .unwrap();
 
     // Initialize the Delay peripheral, and use it to toggle the LED state in a
     // loop.

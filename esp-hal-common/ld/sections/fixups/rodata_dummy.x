@@ -2,7 +2,7 @@
 
 
 SECTIONS {
-  .rodata_dummy (NOLOAD) :
+  .rodata_dummy (NOLOAD) : ALIGN(4)
   {
     /* This dummy section represents the .flash.text section but in RODATA.
      * Thus, it must have its alignment and (at least) its size.

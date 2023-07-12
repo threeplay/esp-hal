@@ -43,7 +43,7 @@ SECTIONS {
     . = ALIGN(4);
   } > RWDATA
 
-  .data.wifi :
+  .data.wifi : ALIGN(4)
   {
     . = ALIGN(4);
     *( .dram1 .dram1.*)

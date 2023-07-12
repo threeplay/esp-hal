@@ -15,7 +15,7 @@ INCLUDE "alias.x"
 
 /* ESP32S3 fixups */
 SECTIONS {
-  .rwdata_dummy (NOLOAD) :
+  .rwdata_dummy (NOLOAD) : ALIGN(4)
   {
     /* This dummy section represents the .rwtext section but in RWDATA.
      * Thus, it must have its alignment and (at least) its size.
@@ -32,7 +32,6 @@ SECTIONS {
 
     /* Prepare the alignment of the section above. */
     . = ALIGN(4);
-    _rwdata_reserved_start = .;
   } > RWDATA
 }
 INSERT BEFORE .data;

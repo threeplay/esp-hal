@@ -4,7 +4,7 @@
 */
 
 SECTIONS {
-  .rtc_fast.dummy (NOLOAD) :
+  .rtc_fast.dummy (NOLOAD) : ALIGN(4)
   {
     _rtc_dummy_start = ABSOLUTE(.); /* needed to make section proper size */
     . = . + SIZEOF(.rtc_fast.text);

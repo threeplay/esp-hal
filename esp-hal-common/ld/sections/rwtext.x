@@ -8,7 +8,7 @@ SECTIONS {
     . = ALIGN(4);
   } > RWTEXT
 
-  .rwtext.wifi :
+  .rwtext.wifi : ALIGN(4)
   {
     . = ALIGN(4);
     *( .wifi0iram  .wifi0iram.*)

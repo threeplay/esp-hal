@@ -9,7 +9,7 @@ RESERVE_RTC_FAST = 0;
 RESERVE_RTC_SLOW = 0;
 
 /* define stack size for both cores */
-STACK_SIZE = 8k;
+STACK_SIZE = 32k;
 
 /* Specify main memory areas */
 MEMORY
