@@ -464,7 +464,7 @@ where
         }
     }
 
-    fn read_byte(&mut self) -> nb::Result<u8, Error> {
+    pub fn read_byte(&mut self) -> nb::Result<u8, Error> {
         #[allow(unused_variables)]
         let offset = 0;
 
